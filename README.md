@@ -10,8 +10,11 @@ In the following code block, we generate a data set with just one variable, "age
 
 ```python
 import random
+<<<<<<< HEAD
 import numpy as np
 np.random.seed(0)
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 import pandas as pd
 
 #This code is provided 
@@ -38,8 +41,11 @@ data.columns = ['age', 'label']
 
 This data is created in such a way that the data is not perfectly separable, and also in a way that younger people seem to be more likely to watch the show.
 
+<<<<<<< HEAD
 In the cell below, display both the head and the tail of our `data` DataFrame to get a feel for our data. 
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 data.head()
@@ -175,6 +181,7 @@ Is 41 the best split? Let's find out! You'll create 3 functions in total:
 - A function `gini_score()`, which, given a certain split, computes the gini for the left node, the gini for the right node, and the purity gain
 - A function `best_split()` which loops over the former two functions to find the best split. 
 
+<<<<<<< HEAD
 Let's start by creating the `split()` function. This function takes three arguments, the first one is the column name, which should be a string, the second one is the value that represents the split (in this example, representing a certain age), and as a third argument the name of the data set.  This function is generalized in order to allow us to reuse it for splits on things other than age. 
 
 In the cell below, complete the split function.  This function should split the data from our `data` object just as seen in the Decision Tree diagram above.  
@@ -182,6 +189,9 @@ In the cell below, complete the split function.  This function should split the 
 * `data_left` should contain every row where the value for the DataFrame's `col_name` column is less than or equal to the `value` parameter passed into the function. 
 * `data_right` should contain every row where the value for the DataFrame's `col_name` column is greater than the `value` parameter passed into the function. 
 * The function should return `data_left`, and then `data_right`.
+=======
+Let's start by creating the `split()` function. This function takes three arguments, the first one is the column name, which should be a string, the second one is the value that represents the split (in this example, representing a certain age), and as a third argument the name of the data set.
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -194,8 +204,11 @@ def split(col_name, value, data):
 
 Let's use our newly created function on the column "age" (for this data the only option), and look at the age 44.
 
+<<<<<<< HEAD
 In the cell below, use our newly created `split` function to split our data.  Then, examine `data_left` and `data_right `to confirm that it worked.  
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 data_left, data_right = split("age", 44, data)
@@ -485,6 +498,7 @@ data_right
 
 
 
+<<<<<<< HEAD
 ### GINI Score
 
 Next, we'll complete the `gini_score` function. This function should calculate the gini score. In the real world, just about any Decision Tree algorithm will handle this step for us.  However, we're going to build a function to calculate a gini score for this lab to give ourselves a better understanding of how Decision Trees work.  
@@ -499,6 +513,8 @@ In a nutshell, to calculate gini, our function will:
 * Calculate the weighted gini for each size using our raw gini score for each side, the size of the side, and the total number of samples. 
 * Calculate the overall gain by summing the weighted gini for both sides. 
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 def gini_score(data_left, data_right):
@@ -531,12 +547,18 @@ def gini_score(data_left, data_right):
     return gini_L, gini_R, gain
 ```
 
+<<<<<<< HEAD
 Now, let's call our `gini_score` function to ensure that it works. Call `gini_score` and pass in `data_left` and `data_right` as parameters.
 
 
 ```python
 gini_score(data_left, data_right)
 # Expected output (0.4444444444444444, 0.4012345679012346, 0.42592592592592593)
+=======
+
+```python
+gini_score(data_left, data_right)
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 ```
 
 
@@ -546,6 +568,7 @@ gini_score(data_left, data_right)
 
 
 
+<<<<<<< HEAD
 ### Determining the Optimal Split
 
 Now that we have a function to split our data on a given value, and another function to determine how good this split using gini score, we'll write one more function to find the split that produces the best possible gini scores. 
@@ -560,6 +583,8 @@ The function should:
         * If the gain is better (lower) than the current best score, update the `best` values
 * When every possible value in search space has been tested, return an `output` dictionary containing the best value to split on, the best gain score, the best splits, and the best gini scores for those groups. 
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 def best_split(data, col_name):
@@ -587,6 +612,7 @@ def best_split(data, col_name):
     return output
 ```
 
+<<<<<<< HEAD
 Now, let's test that our new function works.  
 
 
@@ -595,6 +621,15 @@ best_output = best_split(data, "age")
 split_age = best_output['val']
 
 split_age # Expected Output: 49
+=======
+
+```python
+best_output = best_split(data, "age")
+best_output['ginis']
+split_age = best_output['val']
+
+split_age
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 ```
 
 
@@ -604,10 +639,13 @@ split_age # Expected Output: 49
 
 
 
+<<<<<<< HEAD
 ### Optional
 
 If you want to see what's going on in each loop of `best_split`, uncomment and run the cell below.
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 # If you want to see what's going on in each loop...
@@ -622,6 +660,7 @@ If you want to see what's going on in each loop of `best_split`, uncomment and r
 
 ### 1.3 Use scikit learn and verify answer
 
+<<<<<<< HEAD
 We'll use scikit-learn to create a decision tree, and verify that the answer the we found manually above is actually correct.  
 
 Run the cell below to import the `tree` module from sklearn. 
@@ -636,17 +675,33 @@ Now, create a `DecisionTreeClassifier` object. When creating the tree, set the `
 
 ```python
 clf_GoT = DecisionTreeClassifier(criterion = "gini", max_depth = 1)
+=======
+We'll use scikit-learn to create a decision tree. 
+
+
+```python
+from sklearn import tree
+```
+
+
+```python
+clf_GoT = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 1)
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 ```
 
 Now we can use `clf.fit` with "age" as a first argument and "label" as a second argument. If you only have 1 predictor, you need to reshape your predictor using `.reshape(-1, 1)`. 
 
+<<<<<<< HEAD
 Run the cell below to fit our Decision Tree Classifier object to the data. 
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 GoT_tree = clf_GoT.fit(data['age'].values.reshape(-1, 1), data['label'])
 ```
 
+<<<<<<< HEAD
 ### Optional: Visualize the Decision Tree
 
 Some 3rd party libraries make it easy to create a visual representation of our fitted Decision Tree Classifier.  Run the cell below to create the visualization. 
@@ -661,19 +716,70 @@ Some 3rd party libraries make it easy to create a visual representation of our f
 # os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
 # GoT_graph = tree.export_graphviz(GoT_tree, out_file=None) 
 # graph = graphviz.Source(GoT_graph)
+=======
+
+```python
+GoT_tree
+```
+
+
+
+
+    DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=1,
+                max_features=None, max_leaf_nodes=None,
+                min_impurity_decrease=0.0, min_impurity_split=None,
+                min_samples_leaf=1, min_samples_split=2,
+                min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+                splitter='best')
+
+
+
+
+```python
+!pip install graphviz
+```
+
+    Requirement already satisfied: graphviz in /anaconda3/lib/python3.6/site-packages (0.8.4)
+
+
+
+```python
+import graphviz 
+from sklearn.tree import export_graphviz
+import os
+os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
+GoT_graph = tree.export_graphviz(GoT_tree, out_file=None) 
+graph = graphviz.Source(GoT_graph)
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 ```
 
 
 ```python
+<<<<<<< HEAD
 # export_graphviz(GoT_tree, out_file="mytree.dot")
 # with open("mytree.dot") as f: dot_graph = f.read()
 # graphviz.Source(dot_graph)
 ```
 
+=======
+export_graphviz(GoT_tree, out_file="mytree.dot")
+with open("mytree.dot") as f: dot_graph = f.read()
+graphviz.Source(dot_graph)
+```
+
+
+
+
+![svg](index_files/index_32_0.svg)
+
+
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 We see that scikit learn generated the same split! Now, let's verify if we computed the correct gini measures. 
 
 ## 2. US salaries data set
 
+<<<<<<< HEAD
 Now, we'll use our newfound knowledge of Decision Trees to solve a bigger problem on a real world dataset!
 
 ### 2.1 Data pre-processing
@@ -681,6 +787,11 @@ Now, we'll use our newfound knowledge of Decision Trees to solve a bigger proble
 The salary data set was extracted from the census bureau database and contains salary information. The goal is to use this data set and to try to draw conclusions regarding what drives salaries. More specifically, the target variable is categorical (> 50k; <= 50 k).
 
 Run the cell below to import everything we'll need for this step.  
+=======
+### 2.1 Data pre-processing
+
+The salary data set was extracted from the census bureau database and contains salary information. The goal is to use this data set and to try to draw conclusions regarding what drives salaries. More specifically, the target variable is categorical (> 50k; <= 50 k)
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -697,11 +808,17 @@ import sklearn.tree as tree
 import seaborn as sns
 ```
 
+<<<<<<< HEAD
     C:\Users\medio\AppData\Local\Continuum\anaconda3\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
       "This module will be removed in 0.20.", DeprecationWarning)
     
 
 Now, import the data, which is contained in the file `salaries_final.csv`.  Set the `index_col` to `0` when you do this. Display the tail of the new DataFrame to ensure that everything loaded correctly. 
+=======
+    /anaconda3/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+      "This module will be removed in 0.20.", DeprecationWarning)
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -816,9 +933,13 @@ Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool.
 
 - `Sex`: Female, Male.
 
+<<<<<<< HEAD
 It's important to know that scikit learn needs to get dummies as an input for categorical variables. There are a few ways to do this. Pandas comes prepackaged with the functionality to create dummy variables for any categorical columns (also called **_one-hot encoding_**.  To demonstrate another way to create dummy variables, we've used the `patsy` library. This library borrows syntax from the 'R' language, and denotes each categorical column with a `C`.
 
 Run the cell below to separate our data into a target variable and a one-hot encoded version of the data. 
+=======
+It's important to know that scikit learn needs to get dummies as an input for categorical variables. Luckily, we can use the `dmatrices` from the patsy library to get our data in the correct shape. From our 7 predictors, we only have 2 continuous variables ("Age" and "Education-Num"). The other 5 are all categorical.
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -828,7 +949,11 @@ target, data = dmatrices('Target ~ Age + C(Education) + \
                   salaries, return_type = "dataframe")
 ```
 
+<<<<<<< HEAD
 In the cell below, split our data into training and testing sets using the appropriate method from sklearn.
+=======
+Make a train and test split
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -836,6 +961,7 @@ data_train, data_test,target_train, target_test = train_test_split(data, target,
                                                                    test_size = 0.25, random_state=123)
 ```
 
+<<<<<<< HEAD
 ### 2.2 Creating Trees
 
 Now that we have prepared our data, we'll create a large Decision Tree to see how it does. 
@@ -843,10 +969,14 @@ Now that we have prepared our data, we'll create a large Decision Tree to see ho
 In the cell below, create a `DecisionTreeClassifier` object, and set the `criterion` parameter to `'gini'`, as well as the `max_depth` parameter to `12`.
 
 Then, run the cell below it to `fit()` our model to the data. 
+=======
+### 2.2 Creating trees
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
 from sklearn import tree
+<<<<<<< HEAD
 from sklearn.tree import export_graphviz
 sal_tree = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 12)
 ```
@@ -874,11 +1004,31 @@ Run the cell below to visualize the fitted Decision Tree Classifier for our sala
 Let's examine if there's a difference with smaller trees.  
 
 In the cell below, create a Decision Tree Classifier as we did before, but this time set the `max_depth` to `3`.  Still set the `criterion` to `gini`. Then, `.fit()` the smaller model to our training data (see the cell above if you are unsure of the syntax).
+=======
+import graphviz 
+from sklearn.tree import export_graphviz
+sal_tree = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 12)
+sal_tree = sal_tree.fit(data_train, target_train.iloc[:,1])
+
+export_graphviz(sal_tree, out_file="mytree.dot", feature_names=data_train.columns , class_names=list(target_train), rounded=True)
+with open("mytree.dot") as f:
+    dot_graph = f.read()
+graphviz.Source(dot_graph)
+```
+
+
+
+
+![svg](index_files/index_47_0.svg)
+
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
 from sklearn import tree
 sal_tree_smaller = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 3)
+<<<<<<< HEAD
 sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
 ```
 
@@ -907,6 +1057,26 @@ Finally, run the cell below to visualize our smaller Decision Tree with a depth 
 #     dot_graph = f.read()
 # graphviz.Source(dot_graph)
 ```
+=======
+sal_tree_smaller = sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
+```
+
+
+```python
+export_graphviz(sal_tree_smaller, out_file="mytree.dot", feature_names=data_train.columns ,
+                class_names=list(target_train), rounded=True)
+with open("mytree.dot") as f:
+    dot_graph = f.read()
+graphviz.Source(dot_graph)
+```
+
+
+
+
+![svg](index_files/index_49_0.svg)
+
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 Most leaf nodes will point to <= 50 k. How is this possible?
 --> imbalance! 5865 make more than 50k <-> 18555 make less (~25-75%)
@@ -915,10 +1085,13 @@ Note how the left nodes always point to "true" and the right nodes to "false".
 
 ### 2.3 Model performance
 
+<<<<<<< HEAD
 Now that we have trained models, let's evaluate the performance of each.  
 
 Run the cell below to import the `accuracy_score` helper method.  Then, run the cell below to create some sample predictions on our testing data and generate a `confusion_matrix` and a `classification_report` based on the predictions.  
 
+=======
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 ```python
 from sklearn.metrics import accuracy_score
@@ -931,8 +1104,13 @@ print(metrics.confusion_matrix(target_test.iloc[:,1], pred))
 print(metrics.classification_report(target_test.iloc[:,1], pred))
 ```
 
+<<<<<<< HEAD
     [[5583  582]
      [ 903 1073]]
+=======
+    [[5597  568]
+     [ 913 1063]]
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
                  precision    recall  f1-score   support
     
             0.0       0.86      0.91      0.88      6165
@@ -940,6 +1118,7 @@ print(metrics.classification_report(target_test.iloc[:,1], pred))
     
     avg / total       0.81      0.82      0.81      8141
     
+<<<<<<< HEAD
     
 
 Now, run the cell below to generate an accuracy score for our predictions. 
@@ -957,6 +1136,21 @@ print("Accuracy Score for Large Decision Tree: {:.4}%".format(large_tree_accurac
 Now, let's repeat what we did above to generate predictions and reports from our smaller Decision Tree Model.  
 
 In the cell below, create predictions on `data_test` from the smaller decison tree model. The code to provide the confusion matrix and classification report is already provided. 
+=======
+
+
+
+```python
+accuracy_score(target_test.iloc[:,1], pred)
+```
+
+
+
+
+    0.8180813167915489
+
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -974,6 +1168,7 @@ print(metrics.classification_report(target_test.iloc[:,1], pred_smaller))
     
     avg / total       0.75      0.78      0.75      8141
     
+<<<<<<< HEAD
     
 
 Now, use the `accuracy_score` method to generate an accuracy score for the predictions from our smaller Decision Tree model.  If you are unsure of the syntax, look at the previous example above.  
@@ -993,6 +1188,23 @@ print("Accuracy Score for Small Decision Tree: {:.4}%".format(small_tree_accurac
 One of the best ways to tune Decision Trees to prevent **_overfitting_** is to pre-tune the model by providing constraints on certain aspects of the Decision Tree. Decision Trees are famously prone to overfitting, and tuning the model to be more general can help prevent this.  
 
 The following parameters are the most commonly used for tuning.  In a later lab, you'll learn how to automate the search for the best parameters for each. 
+=======
+
+
+
+```python
+accuracy_score(target_test.iloc[:,1], pred_smaller)
+```
+
+
+
+
+    0.776931580886869
+
+
+
+### pre-tuning
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 - criterion: either gini for gini impurity, or entropy for information gain.
 - max_depth: the maximum depth of a tree.
@@ -1000,6 +1212,7 @@ The following parameters are the most commonly used for tuning.  In a later lab,
 - min_samples_leaf: The minimum number of samples required to be at a leaf node.
 - class_weight: Weights associated with classes.
 
+<<<<<<< HEAD
 We'll end this lab by creating a final Decision Tree Classifier, but with some constraints for parameters mentioned above.  
 
 This model should set the following parameters:
@@ -1039,6 +1252,31 @@ sal_tree_tuned.fit(data_train, target_train.iloc[:,1])
 ```
 
 Finally, let's create some predictions with this model and check the performance of it.
+=======
+
+```python
+from sklearn import tree
+sal_tree_tuned= tree.DecisionTreeClassifier(criterion = "gini",
+                                            max_depth = 12, min_samples_split = 300, min_samples_leaf = 150)
+sal_tree_tuned = sal_tree_tuned.fit(data_train, target_train.iloc[:,1])
+```
+
+
+```python
+export_graphviz(sal_tree_tuned, out_file="mytree.dot", feature_names=data_train.columns , 
+                class_names=list(target_train), rounded=True)
+with open("mytree.dot") as f:
+    dot_graph = f.read()
+graphviz.Source(dot_graph)
+```
+
+
+
+
+![svg](index_files/index_61_0.svg)
+
+
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 
 ```python
@@ -1046,9 +1284,13 @@ pred_tuned = sal_tree_tuned.predict(data_test)
 print(metrics.confusion_matrix(target_test.iloc[:,1], pred_tuned))
 print(metrics.classification_report(target_test.iloc[:,1], pred_tuned))
 
+<<<<<<< HEAD
 tuned_accuracy_score = accuracy_score(target_test.iloc[:,1], pred_tuned)
 
 print("Accuracy Score for Tuned Model: {:.4}%".format(tuned_accuracy_score * 100))
+=======
+accuracy_score(target_test.iloc[:,1], pred_tuned)
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 ```
 
     [[5731  434]
@@ -1060,10 +1302,23 @@ print("Accuracy Score for Tuned Model: {:.4}%".format(tuned_accuracy_score * 100
     
     avg / total       0.81      0.82      0.81      8141
     
+<<<<<<< HEAD
     Accuracy Score for Tuned Model: 81.93%
     
 
 For this deep tree: better results with pruning!
+=======
+
+
+
+
+
+    0.8193096671170618
+
+
+
+For this deep tree: better result with pruning!
+>>>>>>> 4f3e9652b48a8e6ab880560bc04aa9c6448684c6
 
 # Sources
 https://www.svds.com/machine-learning-vs-statistics/ 
