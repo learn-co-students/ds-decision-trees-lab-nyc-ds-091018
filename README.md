@@ -191,291 +191,19 @@ Let's use our newly created function on the column "age" (for this data the only
 data_left, data_right = None
 ```
 
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-5-6c5b1813cbeb> in <module>()
+    ----> 1 data_left, data_right = None
+    
+
+    TypeError: 'NoneType' object is not iterable
+
+
 Now, inspect `data_left` and `data_right`.
-
-
-```python
-
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>label</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>19</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>19</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>21</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>22</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>23</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>26</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>28</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>29</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>30</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>31</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>35</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>37</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>38</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>39</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>40</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>42</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>44</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>35</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>36</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>37</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>38</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>39</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>44</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>label</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>18</th>
-      <td>46</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>48</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>49</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>45</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>47</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>49</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>50</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>53</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>54</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>59</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>60</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>62</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>63</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>64</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>65</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>67</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>68</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>68</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 ### Gini Score
 
@@ -533,13 +261,6 @@ In the cell below, call `gini_score` and pass in `data_left` and `data_right`.
 # Expected Output: (0.4444444444444444, 0.4012345679012346, 0.42592592592592593)
 ```
 
-
-
-
-    (0.4444444444444444, 0.4012345679012346, 0.42592592592592593)
-
-
-
 ### Determining the Optimal Split,
 
 Now that we have a function to split our data on a given value, and another function to determine how good this split using gini score, we'll write one more function to find the split that produces the best possible gini scores,
@@ -586,19 +307,12 @@ Now, let's test that our new function works.
 
 
 ```python
-best_output = best_split(data, "age")
-best_output['ginis']
-split_age = best_output['val']
+# best_output = best_split(data, "age")
+# best_output['ginis']
+# split_age = best_output['val']
 
-split_age
+# split_age
 ```
-
-
-
-
-    49
-
-
 
 #### Optional
 
@@ -640,25 +354,13 @@ Run the cell below to fit our Decision Tree Classifier object to the data.
 
 
 ```python
-clf_GoT.fit(data['age'].values.reshape(-1, 1), data['label'])
+# clf_GoT.fit(data['age'].values.reshape(-1, 1), data['label'])
 ```
 
 
 ```python
 GoT_tree
 ```
-
-
-
-
-    DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=1,
-                max_features=None, max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, presort=False, random_state=None,
-                splitter='best')
-
-
 
 #### Optional: Visualize the Fitted Decision Tree
 
@@ -706,10 +408,6 @@ import sklearn.tree as tree
 import seaborn as sns
 ```
 
-    C:\Users\medio\AppData\Local\Continuum\anaconda3\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-      "This module will be removed in 0.20.", DeprecationWarning)
-    
-
 
 ```python
 salaries = pd.read_csv("salaries_final.csv", index_col = 0)
@@ -719,93 +417,6 @@ salaries = pd.read_csv("salaries_final.csv", index_col = 0)
 ```python
 salaries.tail()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Age</th>
-      <th>Education</th>
-      <th>Occupation</th>
-      <th>Relationship</th>
-      <th>Race</th>
-      <th>Sex</th>
-      <th>Target</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>32556</th>
-      <td>27</td>
-      <td>Assoc-acdm</td>
-      <td>Tech-support</td>
-      <td>Wife</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32557</th>
-      <td>40</td>
-      <td>HS-grad</td>
-      <td>Machine-op-inspct</td>
-      <td>Husband</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>&gt;50K</td>
-    </tr>
-    <tr>
-      <th>32558</th>
-      <td>58</td>
-      <td>HS-grad</td>
-      <td>Adm-clerical</td>
-      <td>Unmarried</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32559</th>
-      <td>22</td>
-      <td>HS-grad</td>
-      <td>Adm-clerical</td>
-      <td>Own-child</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32560</th>
-      <td>52</td>
-      <td>HS-grad</td>
-      <td>Exec-managerial</td>
-      <td>Wife</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>&gt;50K</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 The dataset "salaries" contains 6 predictors, and one outcome variable, the target salary <= 50k/ >50k.
 
@@ -858,7 +469,7 @@ Then, run the cell below it to `fit()` our model to the data.
 from sklearn import tree
 
 sal_tree = None
-sal_tree.fit(data_train, target_train.iloc[:,1])
+# sal_tree.fit(data_train, target_train.iloc[:,1])
 ```
 
 
@@ -881,20 +492,8 @@ In the cell below, create a Decision Tree Classifier as we did before, but this 
 
 ```python
 sal_tree_smaller = None
-sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
+# sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
 ```
-
-
-
-
-    DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=3,
-                max_features=None, max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, presort=False, random_state=None,
-                splitter='best')
-
-
 
 
 ```python
@@ -905,13 +504,6 @@ sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
 #     dot_graph = f.read()
 # graphviz.Source(dot_graph)
 ```
-
-
-
-
-![svg](output_58_0.svg)
-
-
 
 Most leaf nodes will point to <= 50 k. How is this possible?
 A class imbalance in our dataset! 5865 make more than 50k, while 18555 make less (~25 vs 75%)
@@ -932,65 +524,29 @@ from sklearn.metrics import accuracy_score
 
 
 ```python
-pred= sal_tree.predict(data_test)
-print(metrics.confusion_matrix(target_test.iloc[:,1], pred))
-print(metrics.classification_report(target_test.iloc[:,1], pred))
+# pred= sal_tree.predict(data_test)
+# print(metrics.confusion_matrix(target_test.iloc[:,1], pred))
+# print(metrics.classification_report(target_test.iloc[:,1], pred))
 ```
-
-    [[5539  584]
-     [ 932 1086]]
-                 precision    recall  f1-score   support
-    
-            0.0       0.86      0.90      0.88      6123
-            1.0       0.65      0.54      0.59      2018
-    
-    avg / total       0.80      0.81      0.81      8141
-    
-    
 
 
 ```python
-accuracy_score(target_test.iloc[:,1], pred)
+# accuracy_score(target_test.iloc[:,1], pred)
 ```
-
-
-
-
-    0.813782090652254
-
-
 
 
 ```python
-pred_smaller = sal_tree_smaller.predict(data_test)
-print(metrics.confusion_matrix(target_test.iloc[:,1], pred_smaller))
-print(metrics.classification_report(target_test.iloc[:,1], pred_smaller))
+# pred_smaller = sal_tree_smaller.predict(data_test)
+# print(metrics.confusion_matrix(target_test.iloc[:,1], pred_smaller))
+# print(metrics.classification_report(target_test.iloc[:,1], pred_smaller))
 ```
-
-    [[5752  371]
-     [1465  553]]
-                 precision    recall  f1-score   support
-    
-            0.0       0.80      0.94      0.86      6123
-            1.0       0.60      0.27      0.38      2018
-    
-    avg / total       0.75      0.77      0.74      8141
-    
-    
 
 Now, run the cell below to generate an accuracy score for our predictions.
 
 
 ```python
-accuracy_score(target_test.iloc[:,1], pred_smaller)
+# accuracy_score(target_test.iloc[:,1], pred_smaller)
 ```
-
-
-
-
-    0.7744748802358432
-
-
 
 ### Pre-Tuning
 
@@ -1022,13 +578,6 @@ sal_tree_tuned = sal_tree_tuned.fit(data_train, target_train.iloc[:,1])
 # graphviz.Source(dot_graph)
 ```
 
-
-
-
-![svg](output_71_0.svg)
-
-
-
 Now, run the cell below so we can see how well the pre-tuned model did.
 
 
@@ -1039,24 +588,6 @@ print(metrics.classification_report(target_test.iloc[:,1], pred_tuned))
 
 accuracy_score(target_test.iloc[:,1], pred_tuned)
 ```
-
-    [[5731  434]
-     [1037  939]]
-                 precision    recall  f1-score   support
-    
-            0.0       0.85      0.93      0.89      6165
-            1.0       0.68      0.48      0.56      1976
-    
-    avg / total       0.81      0.82      0.81      8141
-    
-    
-
-
-
-
-    0.8193096671170618
-
-
 
 For this deep tree: better result with pruning!
 
