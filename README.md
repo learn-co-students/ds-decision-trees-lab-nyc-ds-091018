@@ -708,9 +708,9 @@ import sklearn.tree as tree
 import seaborn as sns
 ```
 
-    C:\Users\medio\AppData\Local\Continuum\anaconda3\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+    /anaconda3/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
       "This module will be removed in 0.20.", DeprecationWarning)
-    
+
 
 
 ```python
@@ -908,13 +908,6 @@ sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
 # graphviz.Source(dot_graph)
 ```
 
-
-
-
-![svg](output_58_0.svg)
-
-
-
 Most leaf nodes will point to <= 50 k. How is this possible?
 A class imbalance in our dataset! 5865 make more than 50k, while 18555 make less (~25 vs 75%)
 
@@ -939,16 +932,16 @@ print(metrics.confusion_matrix(target_test.iloc[:,1], pred))
 print(metrics.classification_report(target_test.iloc[:,1], pred))
 ```
 
-    [[5539  584]
-     [ 932 1086]]
+    [[5559  614]
+     [ 862 1106]]
                  precision    recall  f1-score   support
     
-            0.0       0.86      0.90      0.88      6123
-            1.0       0.65      0.54      0.59      2018
+            0.0       0.87      0.90      0.88      6173
+            1.0       0.64      0.56      0.60      1968
     
-    avg / total       0.80      0.81      0.81      8141
+    avg / total       0.81      0.82      0.81      8141
     
-    
+
 
 
 ```python
@@ -958,7 +951,7 @@ accuracy_score(target_test.iloc[:,1], pred)
 
 
 
-    0.813782090652254
+    0.8186954919543054
 
 
 
@@ -969,16 +962,16 @@ print(metrics.confusion_matrix(target_test.iloc[:,1], pred_smaller))
 print(metrics.classification_report(target_test.iloc[:,1], pred_smaller))
 ```
 
-    [[5752  371]
-     [1465  553]]
+    [[5809  364]
+     [1403  565]]
                  precision    recall  f1-score   support
     
-            0.0       0.80      0.94      0.86      6123
-            1.0       0.60      0.27      0.38      2018
+            0.0       0.81      0.94      0.87      6173
+            1.0       0.61      0.29      0.39      1968
     
-    avg / total       0.75      0.77      0.74      8141
+    avg / total       0.76      0.78      0.75      8141
     
-    
+
 
 Now, run the cell below to generate an accuracy score for our predictions.
 
@@ -990,7 +983,7 @@ accuracy_score(target_test.iloc[:,1], pred_smaller)
 
 
 
-    0.7744748802358432
+    0.7829504974818818
 
 
 
@@ -1024,13 +1017,6 @@ sal_tree_tuned = sal_tree_tuned.fit(data_train, target_train.iloc[:,1])
 # graphviz.Source(dot_graph)
 ```
 
-
-
-
-![svg](output_71_0.svg)
-
-
-
 Now, run the cell below so we can see how well the pre-tuned model did.
 
 
@@ -1042,21 +1028,21 @@ print(metrics.classification_report(target_test.iloc[:,1], pred_tuned))
 accuracy_score(target_test.iloc[:,1], pred_tuned)
 ```
 
-    [[5731  434]
-     [1037  939]]
+    [[5724  449]
+     [1007  961]]
                  precision    recall  f1-score   support
     
-            0.0       0.85      0.93      0.89      6165
-            1.0       0.68      0.48      0.56      1976
+            0.0       0.85      0.93      0.89      6173
+            1.0       0.68      0.49      0.57      1968
     
     avg / total       0.81      0.82      0.81      8141
     
-    
 
 
 
 
-    0.8193096671170618
+
+    0.821152192605331
 
 
 
