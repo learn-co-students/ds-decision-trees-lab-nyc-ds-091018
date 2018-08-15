@@ -181,23 +181,21 @@ In the cell below, complete the `split` function. This function will take in a c
 ```python
 def split(col_name, value, data):
     #split the data in 2 given a column name and the value
-    data_left = data.loc[data[col_name] <= value]
-    data_right = data.loc[data[col_name] > value]
-    return data_left, data_right
+    pass
 ```
 
 Let's use our newly created function on the column "age" (for this data the only option), and look at the age 44.
 
 
 ```python
-data_left, data_right = split("age", 44, data)
+data_left, data_right = None
 ```
 
 Now, inspect `data_left` and `data_right`.
 
 
 ```python
-data_left
+
 ```
 
 
@@ -354,7 +352,7 @@ data_left
 
 
 ```python
-data_right
+
 ```
 
 
@@ -498,30 +496,30 @@ Complete the `gini_score` function in the cell below.  Since this function is a 
 def gini_score(data_left, data_right):
     
     # amount of instances flowing in the left vs right node
-    size_left= len(data_left)
-    size_right = len(data_right)
-    n_samples = size_left + size_right
+    size_left= None
+    size_right = None
+    n_samples = None
     
     # respective chances of seeing each outcome in the left vs right node 
-    p_0L = (data_left['label']==0).sum() / size_left
-    p_1L = (data_left['label'] == 1).sum() / size_left
-    p_0R = (data_right['label'] == 0).sum() / size_right
-    p_1R = (data_right['label'] == 1).sum() / size_right
+    p_0L = None
+    p_1L = None
+    p_0R = None
+    p_1R = None
     
     #take the squares and sum over each node
-    score_L = p_0L*p_0L+p_1L*p_1L
-    score_R = p_0R*p_0R+p_1R*p_1R
+    score_L = None
+    score_R = None
     
     # left node and right node ginis
-    gini_L = 1- score_L
-    gini_R = 1- score_R
+    gini_L = None
+    gini_R = None
     
     #weighted ginis
-    weight_gini_L = gini_L * (size_left / n_samples)
-    weight_gini_R = gini_R * (size_right / n_samples)
+    weight_gini_L = None
+    weight_gini_R = None
     
     # The gains (here, we don't compute the root gini again. This value should be mimimized.)
-    gain = weight_gini_L + weight_gini_R
+    gain = None
     return gini_L, gini_R, gain
 ```
 
@@ -531,7 +529,7 @@ In the cell below, call `gini_score` and pass in `data_left` and `data_right`.
 
 
 ```python
-gini_score(data_left, data_right)
+
 # Expected Output: (0.4444444444444444, 0.4012345679012346, 0.42592592592592593)
 ```
 
@@ -561,25 +559,25 @@ The function should:
 ```python
 def best_split(data, col_name):
     # make sure you have the correct range to loop over
-    min_val = data[col_name].min()
-    max_val = data[col_name].max()
+    min_val = None
+    max_val = None
     best_score = 999
     # loop over all the ages 
     for i in range(min_val, max_val):
-        data_left, data_right = split(col_name, i, data)
-        gini_l, gini_r, gain = gini_score(data_left, data_right)
+        data_left, data_right = None
+        gini_l, gini_r, gain = None
         # update if gain is lower than any previously observed gain 
-        if gain < best_score:
-            best_val = i
-            best_score = gain
-            best_groups = data_left, data_right
-            best_ginis= gini_l, gini_r
-    output = {}
+        if None:
+            best_val = None
+            best_score = None
+            best_groups = None
+            best_ginis= None
+    output = None
     # create a dictionary with the best value, the best gain, the best groups and the best ginis
-    output['val'] = best_val 
-    output['gain'] = best_score
-    output['groups'] = best_groups  
-    output['ginis'] = best_ginis
+    output['val'] = None
+    output['gain'] = None
+    output['groups'] = None 
+    output['ginis'] = None
 
     return output
 ```
@@ -633,7 +631,7 @@ Now, create a `DecisionTreeClassifier` object. When creating the tree, set the `
 
 
 ```python
-clf_GoT = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 1)
+clf_GoT = None
 ```
 
 Now we can use `clf.fit` with "age" as a first argument and "label" as a second argument. If you only have 1 predictor, you need to reshape your predictor using `.reshape(-1, 1)`. 
@@ -642,7 +640,7 @@ Run the cell below to fit our Decision Tree Classifier object to the data.
 
 
 ```python
-GoT_tree = clf_GoT.fit(data['age'].values.reshape(-1, 1), data['label'])
+clf_GoT.fit(data['age'].values.reshape(-1, 1), data['label'])
 ```
 
 
@@ -859,8 +857,8 @@ Then, run the cell below it to `fit()` our model to the data.
 ```python
 from sklearn import tree
 
-sal_tree = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 12)
-sal_tree = sal_tree.fit(data_train, target_train.iloc[:,1])
+sal_tree = None
+sal_tree.fit(data_train, target_train.iloc[:,1])
 ```
 
 
@@ -882,7 +880,7 @@ In the cell below, create a Decision Tree Classifier as we did before, but this 
 
 
 ```python
-sal_tree_smaller = tree.DecisionTreeClassifier(criterion = "gini", max_depth = 3)
+sal_tree_smaller = None
 sal_tree_smaller.fit(data_train, target_train.iloc[:,1])
 ```
 
